@@ -3,4 +3,5 @@ Flutter WordPress Login with Dio
 
 # Requisites
 
-"JWT Authentication for WP-API" plugin
+Install and configure "JWT Authentication for WP-API" Wordpress plugin
+rename lib/settings.example.dart in lib/settings.dart. Modify it with your WP url site.
