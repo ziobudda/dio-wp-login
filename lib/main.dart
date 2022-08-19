@@ -74,8 +74,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
   double windowWidth = 0;
@@ -112,86 +110,83 @@ class _MyHomePageState extends State<MyHomePage> {
             height: MediaQuery.of(context).size.height -
                 appBar.preferredSize.height,
             width: 600,
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  WindowSizeTexts(),
-                  SizedBox(height: 20),
-                  Card(
-                    elevation: 5,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          labelText: "Email", //babel text
-                          labelStyle: TextStyle(
-                            fontSize: 13,
-                            color: Color.fromRGBO(93, 93, 93, 0.5),
-                            fontWeight: FontWeight.w600,
-                          ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //WindowSizeTexts(),
+                //SizedBox(height: 20),
+                Card(
+                  elevation: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        labelText: "Email", //babel text
+                        labelStyle: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromRGBO(93, 93, 93, 0.5),
+                          fontWeight: FontWeight.w600,
                         ),
-                        controller: usernameController,
-                        showCursor: true,
-                        enableSuggestions: false,
-                        autocorrect: false,
                       ),
+                      controller: usernameController,
+                      showCursor: true,
+                      enableSuggestions: false,
+                      autocorrect: false,
                     ),
                   ),
-                  Card(
-                    elevation: 5,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          labelText: "Password", //babel text
-                          labelStyle: TextStyle(
-                            fontSize: 13,
-                            color: Color.fromRGBO(93, 93, 93, 1),
-                            fontWeight: FontWeight.w600,
-                          ),
+                ),
+                Card(
+                  elevation: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        labelText: "Password", //babel text
+                        labelStyle: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromRGBO(93, 93, 93, 1),
+                          fontWeight: FontWeight.w600,
                         ),
-                        controller: passwordController,
-                        showCursor: true,
-                        obscureText: true,
-                        enableSuggestions: false,
-                        autocorrect: false,
                       ),
+                      controller: passwordController,
+                      showCursor: true,
+                      obscureText: true,
+                      enableSuggestions: false,
+                      autocorrect: false,
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Center(
-                      child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                        horizontal: (MediaQuery.of(context).size.width > 300)
-                            ? 100
-                            : 10,
-                      ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Center(
+                    child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 20,
+                      horizontal:
+                          (MediaQuery.of(context).size.width > 300) ? 100 : 10,
                     ),
-                    onPressed: () {},
-                    child: Text('Login'),
-                  )),
-                  SizedBox(
-                    height: 20,
                   ),
-                  (MediaQuery.of(context).size.width > 300)
-                      ? Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: bottomLinks(false))
-                      : Column(children: bottomLinks(true)),
-                ],
-              ),
+                  onPressed: () {},
+                  child: Text('Login'),
+                )),
+                SizedBox(
+                  height: 20,
+                ),
+                (MediaQuery.of(context).size.width > 300)
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: bottomLinks(false))
+                    : Column(children: bottomLinks(true)),
+              ],
             ),
           ),
         ),
